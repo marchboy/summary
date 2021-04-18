@@ -1,6 +1,16 @@
+## windows环境问题小结
 
+一、缺少python-Levenshtein包，windows无法安装的问题。
+
+解决方案：https://www.lfd.uci.edu/~gohlke/pythonlibs/里面查找python-Levenshtein.(版本号).whl，然后可以pip intall了
+
+二、没有安装gensim==3.8.3的包，而是默认安装了最新的4.0.1版本的包。
+
+需要将Word2Vec方法的参数size改为vector_size，iter改为epochs
+
+
+## 使用步骤
 先将AutoMaster_TrainSet 和 AutoMaster_TestSet 拷贝到data 路径下 再使用 .
-
 
 
 代码结构
@@ -177,11 +187,4 @@
       }
     }
    ```
-
-
-问题小结：
-
-缺少python-Levenshtein包，windows无法安装的问题。
-解决方案：https://www.lfd.uci.edu/~gohlke/pythonlibs/里面查找python-Levenshtein.xxx.whl
-然后可以pip intall了
 
