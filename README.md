@@ -8,6 +8,14 @@
 
 需要将Word2Vec方法的参数size改为vector_size，iter改为epochs
 
+三、找不到src模块
+
+以绝对路径或者相对路径导入文件的方法
+```
+import sys
+sys.path.append("D:/Projects/TextSummary/week2_项目导论中与中文词向量实践/summary/")
+```
+
 
 ## 使用步骤
 先将AutoMaster_TrainSet 和 AutoMaster_TestSet 拷贝到data 路径下 再使用 .
