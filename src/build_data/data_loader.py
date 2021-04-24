@@ -1,13 +1,8 @@
-# -*- coding: utf-8 -*-
-
 import os
-import sys
 import jieba
 import logging
 
 import numpy as np
-
-sys.path.append("D:/Projects/TextSummary/week2_项目导论中与中文词向量实践/summary/")
 
 from src.build_data.build_w2v import build_w2v
 from src.build_data.preprocess import preprocess
