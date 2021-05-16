@@ -74,8 +74,8 @@ embedding_dim = 300
 
 sample_total = 82871
 
-batch_size = 32
-# batch_size = 4
+# batch_size = 32
+batch_size = 4
 
 epochs = 10
 

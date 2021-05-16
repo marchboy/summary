@@ -15,6 +15,9 @@ def train_model(model, vocab, params, checkpoint_manager):
     # 获取vocab大小
     params['vocab_size'] = vocab.count
 
+    print("++++++++++++++++++")
+    print(params['batch_size'])
+
     optimizer = tf.keras.optimizers.Adam(name='Adam', learning_rate=params['learning_rate'])
 
     train_dataset, val_dataset, train_steps_per_epoch, val_steps_per_epoch = train_batch_generator(

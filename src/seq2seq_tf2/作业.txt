@@ -1,3 +1,0 @@
-1 补全 seq2seq_tf2.model_layers 中的代码
-2 补全 seq2seq_tf.seq2seq_model 中的代码
-3 试着跑通 seq2seq_tf.train.py，把模型训练起来~

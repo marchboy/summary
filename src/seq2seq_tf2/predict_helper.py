@@ -44,6 +44,10 @@ def batch_greedy_decode(model, batch_data, vocab, params):
                                                                    enc_output)
 
         # id转换 贪婪搜索
+        ''' 
+            id转换 贪婪搜索
+            补全代码
+        '''
         predicted_ids = tf.argmax(predictions, axis=1).numpy()
 
         for index, predicted_id in enumerate(predicted_ids):
@@ -189,6 +193,11 @@ def beam_decode(model, batch, vocab, params):
             # 分裂 添加 beam size 种可能性
             for j in range(params['beam_size'] * 2):
                 # 构造可能的情况
+
+                '''
+                    构造可能的情况，并把可能情况添加到all_hyps中
+                    补全代码
+                '''
                 new_hyp = h.extend(token=top_k_ids[i, j].numpy(),
                                    log_prob=top_k_log_probs[i, j],
                                    hidden=new_hidden,
@@ -220,8 +229,13 @@ def beam_decode(model, batch, vocab, params):
 
     if len(results) == 0:
         results = hyps
+    '''
+        对所有的假设集做排序hyps_sorted
+        补全代码
+    '''
 
     hyps_sorted = sorted(results, key=lambda h: h.avg_log_prob, reverse=True)
+    
     print_top_k(hyps_sorted, 3, vocab, batch)
 
     best_hyp = hyps_sorted[0]

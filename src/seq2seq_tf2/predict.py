@@ -2,6 +2,10 @@
 # Created by LuoJie at 12/12/19
 import os
 import tensorflow as tf
+
+import sys
+sys.path.append("D:/Projects/TextSummary/week2_项目导论中与中文词向量实践/summary/")
+
 from src.seq2seq_tf2.seq2seq_batcher import beam_test_batch_generator
 from src.seq2seq_tf2.seq2seq_model import Seq2Seq
 from src.seq2seq_tf2.predict_helper import beam_decode, greedy_decode
