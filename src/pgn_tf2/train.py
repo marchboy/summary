@@ -1,3 +1,7 @@
+
+import sys
+
+sys.path.append("D:/Projects/TextSummary/week2_项目导论中与中文词向量实践/summary/")
 from src.utils.gpu_utils import config_gpu
 
 import tensorflow as tf

@@ -342,11 +342,11 @@ def batch_generator(generator, params, vocab, max_enc_len, max_dec_len, batch_si
 
 def get_steps_per_epoch(params):
     if params['mode'] == "train":
-        file = open(params["train_seg_y_dir"])
+        file = open(params["train_seg_y_dir"], encoding='utf-8')
     elif params['mode'] == 'test':
-        file = open(params["test_seg_x_dir"])
+        file = open(params["test_seg_x_dir"], encoding='utf-8')
     else:
-        file = open(params["val_seg_x_dir"])
+        file = open(params["val_seg_x_dir"], encoding='utf-8')
     num_examples = len(file.readlines())
     if params['decode_mode'] == 'beam':
         return num_examples
