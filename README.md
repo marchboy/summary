@@ -1,3 +1,10 @@
+## Date: Week4-homework
+![](data/微信截图_20210524011648.png)
+
+![](data/微信截图_20210524011715.png)
+
+![](data/微信截图_20210524011749.png)
+
 ## windows环境问题小结
 
 一、缺少python-Levenshtein包，windows无法安装的问题。
@@ -37,6 +44,7 @@ sys.path.append("D:/Projects/TextSummary/week2_项目导论中与中文词向量
     ....
     
     
+
 训练步骤:
 1. 拷贝数据集到data路径下
 2. 运行utils\data_loader.py可以一键完成 预处理数据 构建数据集
@@ -68,7 +76,7 @@ sys.path.append("D:/Projects/TextSummary/week2_项目导论中与中文词向量
            "r": 0.31313195314734876
        }
    }
-    ```
+   ```
 2. 运行 predict.py 调用 greedy decode 或者 beam search 进行预测，beam search 使用的是最后一个ckpt，所以可能差在这
 
     ```json
