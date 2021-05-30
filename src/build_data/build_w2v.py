@@ -14,5 +14,6 @@ def build_w2v():
                         workers=cores,
                         iter=config.wv_train_epochs,
                         window=5,
-                        min_count=5)
+                        min_count=5,
+                        compute_loss=True)
     return wv_model
