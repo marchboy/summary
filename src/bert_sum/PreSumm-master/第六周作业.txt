@@ -1,0 +1,3 @@
+1 补全 models.model_builder.Bert 中的 __init__ 函数中的代码，完成从 hf 中加载 bert 预训练模型
+2 补全 models.model_builder.ExtSummarizer 中的 forward 方法，完成 BertSum 模型的构建
+3 使用 bash train_ext.sh 训练模型，并尝试更改参数完成调参过程

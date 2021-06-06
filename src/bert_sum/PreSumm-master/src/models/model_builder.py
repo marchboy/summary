@@ -136,18 +136,20 @@ def get_generator(vocab_size, dec_hidden_size, device):
 class Bert(nn.Module):
     def __init__(self, large, temp_dir, finetune=False):
         super(Bert, self).__init__()
+
+        # ----------------------------------------------------------------------------------------
+        # 补全代码
+        # 加载 Bert 的预训练模型，赋值给 self.model
+        # 加载的模型可以参考 https://huggingface.co/models?filter=zh
+        # ----------------------------------------------------------------------------------------
+
+        # '../../models/chinese_roberta_wwm_ext_pytorch',
         if large:
             self.model = BertModel.from_pretrained(
-                'bert-base-chinese',
-                cache_dir=temp_dir,
-                return_dict=False
-            )
+                'bert-base-chinese', cache_dir=temp_dir, return_dict=False)
         else:
             self.model = BertModel.from_pretrained(
-                'bert-base-chinese',
-                cache_dir=temp_dir,
-                return_dict=False
-            )
+                'bert-base-chinese', cache_dir=temp_dir, return_dict=False)
         # '../../models/chinese_roberta_wwm_ext_pytorch',
         self.finetune = finetune
 
@@ -219,6 +221,13 @@ class ExtSummarizer(nn.Module):
         self.to(device)
 
     def forward(self, src, segs, clss, mask_src, mask_cls):
+        # ----------------------------------------------------------------------------------------
+        # 补全代码
+        # 给 bert 增加一层 self.ext_layer，完成 BertSum 的前向传播过程
+        # 需要注意的是，clss 是 <CLS> 所在位置，mask_cls 为真实的抽取出来句子的位置
+        # 以上两个值需要仔细去看 data_loader.py 中的 Batch 类
+        # ----------------------------------------------------------------------------------------
+        
         top_vec = self.bert(src, segs, mask_src)
         sents_vec = top_vec[torch.arange(top_vec.size(0)).unsqueeze(1), clss]
         sents_vec = sents_vec * mask_cls[:, :, None].float()
