@@ -200,6 +200,7 @@ def train_ext(args, device_id):
     if (args.world_size > 1):
         train_multi_ext(args)
     else:
+        print(device_id)
         train_single_ext(args, device_id)
 
 

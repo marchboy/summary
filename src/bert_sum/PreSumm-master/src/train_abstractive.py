@@ -14,6 +14,12 @@ import time
 import torch
 from transformers import BertTokenizer
 
+
+import sys
+sys.path.append("D:/Projects/TextSummary/week2_项目导论中与中文词向量实践/summary/src/bert_sum/PreSumm-master/src")
+sys.path.append("D:/Projects/TextSummary/week2_项目导论中与中文词向量实践/summary/")
+
+
 import distributed
 from models import data_loader, model_builder
 from models.data_loader import load_dataset
