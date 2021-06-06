@@ -1,3 +1,37 @@
+
+
+## Date: Week6-homework
+
+**遇到问题**
+
+Win X64 bit：
+
+```
+RuntimeError: No CUDA GPUs are available
+```
+
+![](photo/week6_1.png)
+
+**解决方案**
+
+在文件代码`train_extractive.py`中第217-219行中：
+
+```python
+# if device_id >= 0:
+#     torch.cuda.set_device(device_id)
+#     torch.cuda.manual_seed(args.seed)
+```
+
+注释掉这段，这是多卡训练时，控制用哪几张GPU的指令，如果你是单卡，直接删掉就可以了。
+
+
+
+**Result**
+
+![](photo/week6_2.png)
+
+![](photo/week6_3.png)
+
 ## Date: Week5-homework
 
 ![](photo/week5.png)
